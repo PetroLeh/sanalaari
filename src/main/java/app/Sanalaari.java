@@ -23,45 +23,43 @@ public class Sanalaari {
         }
     }
 
-    public int size() {
-        return this.wordData.size();
-    }
-
     public List<WordData> get(String letters, int length) {
         ArrayList<WordData> result = new ArrayList<>();
         ArrayList<String> partial = new ArrayList<>();
+        char[] letterSet = letters.toCharArray();
 
         for (WordData w : wordData) {
             if (w.plain().length() == length)
                 partial.add(w.plain());
         }
 
-        char[] letterSet = letters.toCharArray();
         for (String word : partial) {
-            int match = 0;
-            boolean[] used = new boolean[letters.length()];
+            int matchedLetters = 0;
+            boolean[] usedLetter = new boolean[letters.length()];
             
             for (char charInWord : word.toCharArray()) {
-                boolean valid = false;
+                boolean letterFound = false;
                 for (int i = 0; i < letters.length(); i++) {
-                    if (used[i])
+                    if (usedLetter[i])
                         continue;
                     if (letterSet[i] == charInWord) {
-                        used[i] = true;
-                        valid = true;
+                        usedLetter[i] = true;
+                        letterFound = true;
                         break;
                     }
                 }
-                if (!valid)
-                break;
-                match++;            
+                if (!letterFound)
+                    break;
+                matchedLetters++;            
             }
-            System.out.println();
-            if (match == length)
+            if (matchedLetters == length)
                 result.add(wordMap.get(word));
         }
         return result;
     }
 
+    public int size() {
+        return this.wordData.size();
+    }
 
 }
