@@ -58,6 +58,16 @@ public class Sanalaari {
         return result;
     }
 
+    public ArrayList<String> getPlain(String letters, int length) {
+        ArrayList<String> result = new ArrayList<>();
+        for (WordData wd : get(letters, length)) {
+            String plain = wd.plain();
+            if (!result.contains(plain))
+                result.add(plain);
+        }
+        return result;
+    }
+
     public int size() {
         return this.wordData.size();
     }
