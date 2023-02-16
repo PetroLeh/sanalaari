@@ -6,4 +6,4 @@ Sanalaari käyttää sanojen haussa Kotuksen nykysuomen [sanalistaa](https://kai
 Toistaiseksi toteutettuna on yksinkertainen rajapinta, jolla voi hakea perusmuodossa olevia sanoja.
 Toteutettaviin ominaisuuksiin kuuluu vielä mahdollisuus taivutusmuotojen hakemiseen.
 
-Käyttöliittymä on tarkoitus toteuttaa ainakin Android mobiililaitteisiin.
+Käyttöliittymä on tarkoitus toteuttaa ainakin Android mobiililaitteisiin. [Android UI](https://github.com/PetroLeh/SanalaariUI_Android)
